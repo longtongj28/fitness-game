@@ -1,9 +1,39 @@
 .sidebar {
+    transition: all 0.2s ease-in-out;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 300px;
     background: white;
-    z-index: 100;
+    z-index: 2;
+}
+
+.sidebar.opened {
+    left: 0;
+}
+
+.sidebar.closed {
+    left: -300px;
+}
+
+.closeBtn {
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    top: 50%;
+    transform:translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+    width: 310px;
+    height: 50px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.closeBtn.opened {
+    left: 0;
+}
+
+.closeBtn.closed {
+    left: -300px;
 }

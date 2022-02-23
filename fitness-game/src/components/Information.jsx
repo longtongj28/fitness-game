@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import OtherActivities from './OtherActivites';
 
@@ -9,9 +10,10 @@ const Information = () => {
     // current user selection in the global state, if it's empty,
     // the screen should show something else other than this.
     const activityInfo = useSelector(s => s.activityState)
+
     return ( 
         <>
-        <div className='InformationSidebox'>
+        <div className="InformationSidebox">
             <h1>
                 {activityInfo.name}
             </h1>
