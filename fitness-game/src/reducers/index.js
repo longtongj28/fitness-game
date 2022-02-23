@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
-import {viewState} from './clientReducer';
+import {viewState, activityState} from './clientReducer';
 
 export default combineReducers({
   viewState,
+  activityState
 });
