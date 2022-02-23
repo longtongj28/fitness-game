@@ -9,11 +9,13 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN; // Set your mapbox token here
 
 
-export default function MapView() {
+const MapView = () => {
+  // use selector is selecting from global state
   const mapStyle = useSelector(s => s.viewState.mapStyle);
   const viewState = useSelector(s => s.viewState.viewState);
   const dispatch = useDispatch();
 
+  // use callback - anonymous function
   const onMove = useCallback(e => {
     dispatch({type: SET_VIEW_STATE, payload: e.viewState});
   }, [dispatch]);
@@ -28,3 +30,4 @@ export default function MapView() {
     />
   );
 }
+export default MapView

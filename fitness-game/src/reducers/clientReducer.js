@@ -11,12 +11,11 @@ const defaultMapState = {
 
 export const viewState = (state=defaultMapState, action) => {
   const { type, payload } = action
+
   switch (type) {
     case SET_VIEW_STATE:
-      return {...state, viewState: payload};
-
+      return {...state, viewState: payload}
     default:
-      return state;
+      return state
   }
 }
-
