@@ -1,7 +1,7 @@
 .sidebar {
     transition: all 0.2s ease-in-out;
     position: absolute;
-    top: 0;
+    top: 80px;
     left: 0;
     height: 100%;
     width: 300px;
