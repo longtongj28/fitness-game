@@ -1,6 +1,7 @@
 import { SET_VIEW_STATE, CHANGE_ACTIVITY, GET_USER_LOCATION } from '../actions/types';
 import { generateActivity } from '../util/generateData';
 
+
 const defaultMapState = {
   mapStyle: 'mapbox://styles/mapbox/streets-v11',
   viewState: {
@@ -33,10 +34,15 @@ export const viewState = (state=defaultMapState, action) => {
 // want image of the icon, longitude, and latitude of markers
 const locations = {
   currentUserLocation: {image: null, latitude: 0, longitude: 0},
-  objectives: {
-    basketball: {image: null, list: []},
-    hiking: {image: null, list: []},
-    weights: {image: null, list: []},
+  objectives: [
+    {type: "basketball", list: []},
+    {type: "hiking", list: []},
+    {type: "weights", list: []},
+  ]
+}
+for (let type of locations.objectives) {
+  for (let i = 0; i < 5; i++) {
+    type.list.push(generateActivity())
   }
 }
 
@@ -46,11 +52,13 @@ export const locationsState = (state=locations, action) => {
   switch (type) {
 
     case GET_USER_LOCATION:
-      return {...state,
-              currentUserLocation: {
-                latitude: payload.latitude,
-                longitude: payload.longitude}
-              }
+      let copy = {...state,
+        currentUserLocation: {
+          latitude: payload.latitude,
+          longitude: payload.longitude}
+        }
+      
+      return copy
     default:
       return state
   }
