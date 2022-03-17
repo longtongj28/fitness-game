@@ -4,7 +4,7 @@ import Navbar from '../Navbar';
 const Rewards = () => {
   return (
     <>
-    <Navbar/>
+  
     <div></div>
     </>
   )

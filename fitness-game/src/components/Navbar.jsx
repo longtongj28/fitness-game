@@ -1,36 +1,43 @@
-import React, {useState} from 'react';
-import './css/navbar.css';
-import {Route, BrowserRouter, NavLink as Router} from 
-"react-router-dom";
-/*import ReorderIcon from '@material-ui/icons/Reorder';*/
+import React, { useState } from "react";
+import Logo from "./assets/fitzonelogo.png"
+import { Link } from "react-router-dom";
+import ReorderIcon from "@material-ui/icons/Reorder";
+import "./css/navbar.css"
 
 function Navbar() {
+  const [openLinks, setOpenLinks] = useState(true);
 
-    const [showLinks, setShowLinks ] = useState(false);  
-    return ( 
-    
-    <div className="Navbar">
-        <div className="leftSide">
-            <div className = "links" id={showLinks ? "hidden" : ""}>
-                <a href="/discover">Discover</a>
-                <a href="/zone">Your Zone</a>
-                <a href="/ranks">Ranking</a>
-                <a href="/rewards">Rewards</a>
-                
-            </div>
-            <button onClick={() => setShowLinks(!showLinks)}> 
-            {""}
-            </button>
-        </div>
-        <div className="rightSide"></div>
+  const toggleNavbar = () => {
+    setOpenLinks(!openLinks);
+  };
+  return (
+    <div className="navbar">
+      <div className="leftSide" id={openLinks ? "open" : "close"}>
+        
+        <img src={Logo} />
 
-        <div className="button">
-            <button className="btn">Sign Up</button>
+        
+        <div className="hiddenLinks">
+          <Link to="/"> Home </Link>
+          <Link to="/discover"> Discover </Link>
+          <Link to="/zone"> Your Zone </Link>
+          <Link to="/ranks"> Ranks </Link>
+          <Link to="/rewards"> Rewards </Link>
         </div>
-     </div>
-    
+      </div>
+      <div className="rightSide">
+        <Link to="/"> Home </Link>
+        <Link to="/discover"> Discover </Link>
+        <Link to="/zone"> Your Zone </Link>
+        <Link to="/ranks"> Ranks </Link>
+        <Link to="/rewards"> Rewards </Link>
+        <button onClick={toggleNavbar}>
+          <ReorderIcon />
+        </button>
+      </div>
+    </div>
   );
 }
 
-export default Navbar
+export default Navbar;
 
