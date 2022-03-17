@@ -6,6 +6,7 @@ import OtherActivities from './OtherActivites';
 // Info should be pulled from global state.
 // When the user clicks on one of the markers, it should update the state with an object
 // that contains that information
+
 const Information = () => {
     // current user selection in the global state, if it's empty,
     // the screen should show something else other than this.

@@ -28,7 +28,6 @@ function Navbar() {
             <button className="btn">Sign Up</button>
         </div>
      </div>
-    
   );
 }
 
