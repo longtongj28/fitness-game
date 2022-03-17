@@ -5,7 +5,7 @@ import ReorderIcon from "@material-ui/icons/Reorder";
 import "./css/navbar.css"
 
 function Navbar() {
-  const [openLinks, setOpenLinks] = useState(true);
+  const [openLinks, setOpenLinks] = useState(false);
 
   const toggleNavbar = () => {
     setOpenLinks(!openLinks);
