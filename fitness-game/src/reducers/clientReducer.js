@@ -38,3 +38,34 @@ export const activityState = (state=activityInfo, action) => {
       return state
   }
 }
+
+
+// LEADERBOARD/RANKS prototype? (sample names)
+const leaderboard = {
+  leaderboard: [ {
+    name: 'Alyssa',
+    score: 300
+  },
+  {
+    name: 'Brian',
+    score: 200
+  },
+  {
+    name: 'Carrie',
+    score: 100
+  },
+  {
+    name: 'David',
+    score: 50
+  } ]
+}
+export const leaderboardState = (state=leaderboard, action) => {
+  const { type, payload } = action
+
+  switch(type) {
+    case CHANGE_ACTIVITY:
+      return payload
+    default:
+      return state
+  }
+}
