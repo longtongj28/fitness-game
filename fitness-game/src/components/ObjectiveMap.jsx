@@ -51,7 +51,7 @@ const MapView = () => {
         latitude={userLocation.latitude}
         anchor="bottom"
         >
-          {/* <img src={userIcon} alt="user icon"/>*/}
+          <img className='marker currentUser' src={userIcon} alt="user icon"/>
         </Marker>
         {objectives.map((type, i) => {
           return(
@@ -64,7 +64,6 @@ const MapView = () => {
                     longitude={act.longitude}
                   >
                     <img className='marker' src={`${imgs[type.type]}`} alt={`${type.type}`}/>
-
                   </Marker>
                 )
               })}
