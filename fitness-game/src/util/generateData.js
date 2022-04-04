@@ -5,8 +5,21 @@ export const generateActivity = () => {
     description: generateChoice('str'),
     minTime: generateChoice('int'),
     participants: generateChoice('int'),
-    location: generateChoice('str')
+    location: generateChoice('str'),
+    longitude: generateRandomLatLng(false),
+    latitude: generateRandomLatLng(true)
   }
+}
+
+//https://stackoverflow.com/questions/6878761/javascript-how-to-create-random-longitude-and-latitudes
+const generateRandomLatLng = (lat) => {
+    var num = Math.random()* (lat ? 90 : 180);
+    var posorneg = Math.random() > 0.5;
+    if (posorneg)
+    {
+        num = num * -1;
+    }
+    return num;
 }
 
 const generateChoice = (type) => {
