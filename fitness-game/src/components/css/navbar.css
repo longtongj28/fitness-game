@@ -1,18 +1,28 @@
+
 .Navbar {
-    background-color: #021E39;
+  background: rgb(238,210,174);
+  background: radial-gradient(circle, rgba(238,210,174,1) 0%, rgba(148,187,233,1) 100%);
     width: 100%;
     height: 80px;
-    font-family: Arial, Helvetica, sans-serif;
     display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 100;
     position: absolute;
-
+    
   }
+
+.Navbar-logo {
+  color: #fff;
+  justify-self: start;
+  margin-left: 20px;
+  cursor: pointer;
+}
 
 .Navbar .leftSide{
     flex: 50%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
   
 }
@@ -24,14 +34,21 @@
 
 }
 
-.Navbar .leftSide .links a {
+.Navbar .leftSide .links a{
 
     text-decoration: none;
     color: white;
-    font-size: 25px;
+    font-size: 20px;
     margin-left: 15px;
-    
+}
 
+.Navbar .leftSide button {
+  display: none;
+  margin-left: 20px;
+}
+
+.Navbar .leftSide #hidden{
+  display: flex;
 }
 
 
@@ -67,11 +84,48 @@
     background: white;
   }
 
+@media only screen and (max-width: 900px) {
+ .Navbar .leftSide .links a {
+   font-size: 15px;
 
+ }
+}
 
+@media only screen and (max-width: 745px) {
+  .Navbar .leftSide .links a {
+    font-size: 10px;
+ 
+  }
+ }
 
+@media only screen and (max-width: 650px) {
+  .Navbar .leftSide button {
+    display: flex;
+  }
 
+  .Navbar .leftSide .links{
+    display: none;
+ }
 
+ .Navbar .leftSide #hidden{
+  position: absolute;
+  left: 0px;
+  top: 80px;
+  height:230px;
+  width:100%;
+  max-height: 230px;
+  background: rgb(238,210,174);
+  background: radial-gradient(circle, rgba(238,210,174,1) 0%, rgba(148,187,233,1) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+  .Navbar .leftSide #hidden a{
+    margin: 10px;
+    font-size: 25px;
+  }
+}
 
 
 
