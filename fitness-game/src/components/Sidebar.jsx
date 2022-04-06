@@ -13,10 +13,10 @@ const SideBar = () => {
 
     return (
         <>
-            <div class={`sidebar ${opened ? 'opened' : 'closed'}`}>
+            <div className={`sidebar ${opened ? 'opened' : 'closed'}`}>
                 <Information/>
             </div>
-            <div class={`closeBtn ${opened ? 'opened' : 'closed'}`} onClick={onClickClose}>Close Button</div>
+            <div className={`closeBtn ${opened ? 'opened' : 'closed'}`} onClick={onClickClose}>Close Button</div>
         </>
     )
 }
