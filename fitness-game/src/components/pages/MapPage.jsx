@@ -8,7 +8,7 @@ const MapPage = () => {
     return (
         <>
         <div className="page">
-            
+            <Navbar/>
             <ObjectiveMap/>
             <Sidebar/>
         </div>
