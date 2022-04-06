@@ -4,7 +4,7 @@ import Navbar from '../Navbar';
 const Zone = () => {
   return (
     <>
-    <Navbar/>
+
     <div></div>
     </>
   )
