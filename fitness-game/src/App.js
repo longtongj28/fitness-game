@@ -7,9 +7,7 @@ import Ranks from './components/pages/Ranks';
 import Home from './components/pages/Home';
 import Rewards from './components/pages/Rewards';
 import Zone from './components/pages/Zone';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import "./"
+
 
 
 
@@ -17,10 +15,8 @@ import "./"
 function App() {
   return (
 
-    <div className="App">
     <Provider store={store}>  
         <Router>
-        <Navbar/>
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/discover" element={<MapPage/>} />
@@ -29,9 +25,7 @@ function App() {
             <Route path="/zone" element={<Zone/>} />
         </Routes>
       </Router>
-    <Footer/>
     </Provider>
-    </div>
 
   );
 }
