@@ -3,20 +3,22 @@ import { useCallback } from 'react'
 import { useState } from 'react'
 import './css/sidebar.css'
 import Information from './Information'
+import {AiOutlineRight, AiOutlineLeft} from 'react-icons/ai'
 
 const SideBar = () => {
     const [opened, setOpened] = useState(true)
-
+    const [icon, setIcon] = useState(<AiOutlineLeft/>)
     const onClickClose = useCallback(()=> {
         setOpened(opened ? false : true)
+        setIcon(opened ? <AiOutlineRight/> : <AiOutlineLeft/>)
     }, [opened])
 
     return (
         <>
-            <div class={`sidebar ${opened ? 'opened' : 'closed'}`}>
+            <div className={`sidebar ${opened ? 'opened' : 'closed'}`}>
                 <Information/>
             </div>
-            <div class={`closeBtn ${opened ? 'opened' : 'closed'}`} onClick={onClickClose}>Close Button</div>
+            <div className={`closeBtn ${opened ? 'opened' : 'closed'}`} onClick={onClickClose}>{icon}</div>
         </>
     )
 }
