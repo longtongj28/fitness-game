@@ -1,9 +1,10 @@
-import { SET_VIEW_STATE, CHANGE_ACTIVITY, GET_USER_LOCATION } from '../actions/types';
+import { CHANGE_STYLE, SET_VIEW_STATE, CHANGE_ACTIVITY, GET_USER_LOCATION } from '../actions/types';
 import { generateActivity } from '../util/generateData';
 
 
 const defaultMapState = {
   mapStyle: 'mapbox://styles/mapbox/streets-v11',
+  style: 'map-side-open',
   viewState: {
     latitude: 37.8,
     longitude: -122.4,
@@ -18,7 +19,8 @@ export const viewState = (state=defaultMapState, action) => {
 
     case SET_VIEW_STATE:
       return {...state, viewState: payload}
-
+    case CHANGE_STYLE:
+      return{...state, style: payload, viewState:{...state.viewState}}
     case GET_USER_LOCATION:
       return {...state, 
               viewState: {
@@ -63,13 +65,16 @@ export const locationsState = (state=locations, action) => {
       return state
   }
 }
-const activityInfo = generateActivity()
+const activityInfo = {
+  actInfo: generateActivity(),
+  activitySelected: false
+}
 export const activityState = (state=activityInfo, action) => {
   const { type, payload } = action
 
   switch(type){
     case CHANGE_ACTIVITY:
-      return payload
+      return {activitySelected: true, actInfo: payload}
     default:
       return state
   }

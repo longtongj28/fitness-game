@@ -4,19 +4,26 @@ import { useState } from 'react'
 import './css/sidebar.css'
 import Information from './Information'
 import {AiOutlineRight, AiOutlineLeft} from 'react-icons/ai'
+import { changeStyle } from '../actions/types'
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react'
 
-const SideBar = () => {
+const SideBar = ({mapRef}) => {   
+    const dispatch = useDispatch() 
     const [opened, setOpened] = useState(true)
     const [icon, setIcon] = useState(<AiOutlineLeft/>)
+
     const onClickClose = useCallback(()=> {
         setOpened(opened ? false : true)
         setIcon(opened ? <AiOutlineRight/> : <AiOutlineLeft/>)
+        dispatch(changeStyle(opened ? 'map-side-closed':'map-side-open'))
     }, [opened])
+
 
     return (
         <>
             <div className={`sidebar ${opened ? 'opened' : 'closed'}`}>
-                <Information/>
+                <Information mapRef={mapRef}/>
             </div>
             <div className={`closeBtn ${opened ? 'opened' : 'closed'}`} onClick={onClickClose}>{icon}</div>
         </>

@@ -7,13 +7,16 @@ import OtherActivities from './OtherActivites';
 // When the user clicks on one of the markers, it should update the state with an object
 // that contains that information
 
-const Information = () => {
+const Information = ({mapRef}) => {
     // current user selection in the global state, if it's empty,
     // the screen should show something else other than this.
-    const activityInfo = useSelector(s => s.activityState)
+    const activityState = useSelector(s => s.activityState)
+    const actSelected = activityState.activitySelected
+    const activityInfo = activityState.actInfo
 
     return ( 
         <>
+        {actSelected &&
         <div className="InformationSidebox">
             <h1>
                 {activityInfo.name}
@@ -49,8 +52,9 @@ const Information = () => {
                 {activityInfo.description}
             </p>
             <button>Start</button>
-            <OtherActivities/>
         </div>
+        }
+        <OtherActivities mapRef={mapRef}/>
         </>
      );
 }

@@ -41,3 +41,7 @@
 .closeBtn.closed {
     left: -300px;
 }
+
+.nearbyActBtn {
+    cursor: pointer;
+}
