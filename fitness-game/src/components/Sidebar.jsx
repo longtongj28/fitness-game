@@ -13,11 +13,11 @@ const SideBar = ({mapRef}) => {
     const [opened, setOpened] = useState(true)
     const [icon, setIcon] = useState(<AiOutlineLeft/>)
 
-    const onClickClose = useCallback(()=> {
-        setOpened(opened ? false : true)
+    const onClickClose = ()=> {
+        setOpened(!opened)
         setIcon(opened ? <AiOutlineRight/> : <AiOutlineLeft/>)
         dispatch(changeStyle(opened ? 'map-side-closed':'map-side-open'))
-    }, [opened])
+    }
 
 
     return (
@@ -25,7 +25,7 @@ const SideBar = ({mapRef}) => {
             <div className={`sidebar ${opened ? 'opened' : 'closed'}`}>
                 <Information mapRef={mapRef}/>
             </div>
-            <div className={`closeBtn ${opened ? 'opened' : 'closed'}`} onClick={onClickClose}>{icon}</div>
+            <div className={`closeBtn ${opened ? 'opened' : 'closed'}`} onClick={() => {onClickClose()}}>{icon}</div>
         </>
     )
 }

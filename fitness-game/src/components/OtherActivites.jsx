@@ -7,14 +7,13 @@ import './css/sidebar.css'
 const OtherActivities = ({mapRef}) => {
     const objectives = useSelector(s => s.locationsState.objectives)
     const dispatch = useDispatch()
+    const cssStyle = useSelector(s => s.viewState.style)
 
     const onSelectMarker = useCallback(({longitude, latitude}) => {
         mapRef.current?.flyTo({center: [longitude, latitude], zoom:14});
-      }, []);
+    }, [])
 
     const onClickNearbyAct = (actInfo) => {
-        var lat = actInfo.latitude
-        var long = actInfo.longitude
         onSelectMarker(actInfo)
         // dispatch(setViewState({latitude: lat, longitude: long, zoom: 14}))
         dispatch(changeActivity(actInfo))

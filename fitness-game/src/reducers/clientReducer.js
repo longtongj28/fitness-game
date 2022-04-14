@@ -79,3 +79,9 @@ export const activityState = (state=activityInfo, action) => {
       return state
   }
 }
+
+// const userInterface = {
+//   style: 'map-side-open'
+// }
+
+// export const userInterfaceState = (state=userInterface, action))
