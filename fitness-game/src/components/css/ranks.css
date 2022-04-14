@@ -1,3 +1,86 @@
-.Ranks {
+.ranks {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 48px;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.board {
     text-align: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 4em;
+    margin-right: 4em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.board .leaderboard {
+    margin-bottom: 1em;
+    
+}
+
+.board .duration {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.board .duration > button {
+    border: 1px solid #7e7e7e;
+    padding: .5em 2em;
+    border-radius: 50px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.board .duration > button:hover {
+    background-color: #2C3131;
+    color: #F3F3F2;
+}
+
+.active {
+    background-color: #2C3131;
+    color: #F3F3F2;
+}
+
+#profile {
+    margin-top: 3em;
+}
+
+#profile .flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    text-align: left;
+    margin-bottom: 2em;
+}
+
+#profile .flex .item {
+    display: flex;
+    align-items: center;
+}
+
+#profile .flex img {
+    
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#profile .flex .info {
+    padding: 1em;
+}
+
+.text-dark {
+    color: #2C3131;
+}
+
+.miniprofile {
+    font-size: 12px;
+    vertical-align: text-top;
 }
