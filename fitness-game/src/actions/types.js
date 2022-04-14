@@ -1,4 +1,5 @@
 export const SET_VIEW_STATE = 'SET_VIEW_STATE'
+<<<<<<< HEAD
 export const setViewState = (viewState) => ({
     type: SET_VIEW_STATE,
     payload: viewState
@@ -19,3 +20,6 @@ export const getUserLocation = (lat, lon) => ({
     type: GET_USER_LOCATION,
     payload: {latitude: lat, longitude: lon}
 })
+=======
+export const CHANGE_ACTIVITY = 'CHANGE_ACTIVITY'
+>>>>>>> main

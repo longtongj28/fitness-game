@@ -7,6 +7,7 @@ import Ranks from './components/pages/Ranks';
 import Home from './components/pages/Home';
 import Rewards from './components/pages/Rewards';
 import Zone from './components/pages/Zone';
+import AddEvtPage from './components/pages/addEventPage';
 
 
 
@@ -23,6 +24,7 @@ function App() {
             <Route path="/ranks" element={<Ranks/>} />
             <Route path="/rewards" element={<Rewards/>} />
             <Route path="/zone" element={<Zone/>} />
+            <Route path="/addEvent" element={<AddEvtPage/>} />
         </Routes>
       </Router>
     </Provider>

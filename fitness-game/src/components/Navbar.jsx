@@ -16,6 +16,7 @@ function Navbar() {
                 <a href="/zone">Your Zone</a>
                 <a href="/ranks">Ranking</a>
                 <a href="/rewards">Rewards</a>
+                <a href="/addEvent">Add Event</a>
                 
             </div>
             <button onClick={() => setShowLinks(!showLinks)}> 

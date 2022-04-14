@@ -16,7 +16,6 @@ export const viewState = (state=defaultMapState, action) => {
   const { type, payload } = action
 
   switch (type) {
-
     case SET_VIEW_STATE:
       return {...state, viewState: payload}
     case CHANGE_STYLE:
@@ -33,37 +32,13 @@ export const viewState = (state=defaultMapState, action) => {
   }
 }
 
-// want image of the icon, longitude, and latitude of markers
-const locations = {
-  currentUserLocation: {image: null, latitude: 0, longitude: 0},
-  objectives: [
-    {type: "basketball", list: []},
-    {type: "hiking", list: []},
-    {type: "weights", list: []},
-  ]
-}
-for (let type of locations.objectives) {
-  for (let i = 0; i < 5; i++) {
-    type.list.push(generateActivity())
-  }
-}
-
-export const locationsState = (state=locations, action) => {
-  const { type, payload } = action
-
-  switch (type) {
-
-    case GET_USER_LOCATION:
-      let copy = {...state,
-        currentUserLocation: {
-          latitude: payload.latitude,
-          longitude: payload.longitude}
-        }
-      
-      return copy
-    default:
-      return state
-  }
+const activityInfo = {
+  name: "Objective 1",
+  distance: 2,
+  description: "This is a description of objective 1",
+  minTime: 60,
+  participants: 50,
+  location: "1234 Fullerton Ave, Fullerton, 54321"
 }
 const activityInfo = {
   actInfo: generateActivity(),
