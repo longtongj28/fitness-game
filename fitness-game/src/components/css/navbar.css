@@ -9,8 +9,18 @@
   z-index: 100;
 }
 
+.onbutton {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #D77FA1;
+  color: #fff;
+  cursor: pointer
+}
+
 .navbar .leftSide {
-  flex: 50%;
+  flex: 40%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -23,7 +33,7 @@
 }
 
 .navbar .rightSide {
-  flex: 50%;
+  flex: 60%;
   height: 100%;
   display: flex;
   align-items: center;

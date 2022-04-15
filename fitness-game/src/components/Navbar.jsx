@@ -14,23 +14,25 @@ function Navbar() {
     <div className="navbar">
       <div className="leftSide" id={openLinks ? "open" : "close"}>
         
-        <img src={Logo} />
 
+        <Link to="/">
+        <img src={Logo} alt="fitzone"/>
+        </Link>
         
         <div className="hiddenLinks">
-          <Link to="/"> Home </Link>
           <Link to="/discover"> Discover </Link>
           <Link to="/zone"> Your Zone </Link>
           <Link to="/ranks"> Ranks </Link>
           <Link to="/rewards"> Rewards </Link>
+          <Link to="/login"> Login </Link>
         </div>
       </div>
       <div className="rightSide">
-        <Link to="/"> Home </Link>
         <Link to="/discover"> Discover </Link>
         <Link to="/zone"> Your Zone </Link>
         <Link to="/ranks"> Ranks </Link>
         <Link to="/rewards"> Rewards </Link>
+        <Link to="/login"> Login </Link>
         <button onClick={toggleNavbar}>
           <ReorderIcon />
         </button>

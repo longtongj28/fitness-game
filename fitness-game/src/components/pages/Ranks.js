@@ -5,7 +5,7 @@ const Ranks = () => {
   return (
     <>
  
-    <div></div>
+    <div className='home'></div>
     </>
   )
 }

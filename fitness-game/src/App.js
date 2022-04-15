@@ -9,6 +9,7 @@ import Rewards from './components/pages/Rewards';
 import Zone from './components/pages/Zone';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Login from './components/pages/Login';
 import "./"
 
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/ranks" element={<Ranks/>} />
             <Route path="/rewards" element={<Rewards/>} />
             <Route path="/zone" element={<Zone/>} />
+            <Route path="/login" element={<Login/>} />
         </Routes>
       </Router>
     <Footer/>

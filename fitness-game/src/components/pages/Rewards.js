@@ -5,7 +5,7 @@ const Rewards = () => {
   return (
     <>
   
-    <div></div>
+    <div className='home'></div>
     </>
   )
 }

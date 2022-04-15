@@ -5,7 +5,7 @@ const Zone = () => {
   return (
     <>
 
-    <div></div>
+    <div className='home'></div>
     </>
   )
 }
